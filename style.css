@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;500;700&family=Lato:wght@400;700&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Anek Latin', sans-serif;
+}
+.nav{
+    height:80px;
+    display: flex;
+}
+
+img{
+    width: 100%;
+}
+
+.nav__container{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    /* 0 top and bottom 24px left and right*/
+    padding: 14px 24px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.purple{
+    color: rgb(136, 9, 255);
+}
+
+.nav__link{
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    /*added padding to make easier to add a border around "Books"*/
+    padding:8px;
+}
+
+.nav__link:hover{
+    text-decoration: underline;
+}
+
+.nav__link--primary:hover{
+    text-decoration: none;
+}
+
+.nav__link--primary{
+    border: 2px solid rgb(53, 16, 126);
+    border-radius: 4px;
+}
+
+.logo{
+    width: 160px;
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+
+header{
+    height: calc(100vh - 80px);
+    background-color: rgb(51, 47, 73);
+}
+
+.header__container{
+    width:100%;
+    max-width: 1400px;
+    margin:0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__container{
+    align-items: center;
+}
+
+.header__description{
+    margin-left: 24px;
+}
+
+.header__img--wrapper{
+    padding: 20px;
+}
+
+h1{
+    font-size: 72px;
+    color: aliceblue;
+    margin-bottom: 24px;
+}
+
+h2{
+    font-size: 32px;
+    color: aliceblue;
+}
+
+.btn{
+    background-color: rgb(92, 41, 169);
+    color: white;
+    /*makes the size of the btn larger (padding is inside) 
+    - (margin is space outside)*/
+    padding: 12px 24px;
+    margin-top: 24px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 500;
+}
+
+/*nice interactive effect*/
+button:active{
+    transform: translateY(2px);
+}
+
