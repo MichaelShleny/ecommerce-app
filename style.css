@@ -6,6 +6,16 @@
     box-sizing: border-box;
     font-family: 'Anek Latin', sans-serif;
 }
+
+html{
+    /*makes all buttons behave with a smooth scroll*/
+    scroll-behavior: smooth;
+}
+
+.no__cursor{
+    cursor: not-allowed;
+}
+
 .nav{
     height:80px;
     display: flex;
@@ -64,6 +74,87 @@ li{
     list-style-type: none;
 }
 
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    /*hide the menu button until the width is >550px*/
+    display: none;
+}
+
+.menu__backdrop{
+    /*all go back to their origional positions*/
+    position: absolute;
+    /*shifts to the very top left of the page*/
+    top:0;
+    left:0;
+    /*sets it to the whole length of the page*/
+    right: 0;
+    bottom:0;
+    z-index:100;
+    background-color: #242424;
+    /* center the links*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*nice transition into menu backdrop*/
+    /*use all keyword to transition in and out*/
+    transition: all 400ms ease;
+    /*display:none;*/
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open{
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.menu__links{
+    /* stacks the links on top of eachother*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    padding: 32px 0;
+}
+
+.menu__link{
+    /*makes the anchor tags white*/
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.menu__link:hover{
+    text-decoration: underline;
+}
+
+.btn__menu--close{
+    /*dont want this affecting anything*/
+    position: absolute;
+    /*moves the close (x) button to the very top right section of the screen
+    including 8px of padding to give it space*/
+    right: 20px;
+    top:10px;
+    padding:8px;
+    color: white;
+}
+
+/*
+
+LANDING
+
+*/
+
 header{
     height: calc(100vh - 80px);
     background-color: rgb(51, 47, 73);
@@ -89,6 +180,7 @@ header{
 
 .header__img--wrapper{
     padding: 20px;
+    z-index: 2px;
 }
 
 h1{
@@ -107,9 +199,9 @@ h2{
     color: white;
     /*makes the size of the btn larger (padding is inside) 
     - (margin is space outside)*/
-    padding: 12px 24px;
+    padding: 16px 34px;
     margin-top: 24px;
-    font-size: 20px;
+    font-size: 28px;
     border-radius: 12px;
     border: none;
     font-weight: 500;
@@ -120,3 +212,252 @@ button:active{
     transform: translateY(2px);
 }
 
+.container{
+    padding: 56px 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.row{
+    width:100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*
+
+HIGHLIGHTS
+
+*/
+
+/* puts whatever on the very top of the highlight section
+in our case, the waves*/
+#highlight{
+    position: relative;
+}
+
+.section__title{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.highlight__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.highlight{
+    /*top/bottom is 0, left/right is 24px*/
+    padding: 0 24px;
+    width:calc(100% / 3);
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.highlight__img{
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(215, 208, 230);
+    border-radius: 4px;
+    color: rgb(131, 63, 195);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.highlight__subtitle{
+    font-size: 20px;
+    text-align: center;
+}
+
+.highlight__para{
+    margin-top: 16px;
+    text-align: center;
+    max-width: 280px;
+}
+
+/*
+
+FEATURED
+
+*/
+
+#features{
+    background-color: rgb(131, 121, 185);
+}
+
+.books{
+    /*puts all the books side by side*/
+    display: flex;
+    /*4 books per row, as we set 25% width below*/
+    flex-wrap: wrap;
+}
+
+.book{
+    /*25% to take up a quarter of the row*/
+    width: 25%;
+    padding:24px;
+   
+}
+
+.book__img{
+    max-height: 380px;
+    transition: all 300ms ease;
+    cursor: no-drop;
+}
+
+.book__img--wrapper{
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+
+.book:hover .book__img{
+    transform: scale(1.03);
+}
+
+.book__title{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.book__title:hover{
+    text-decoration: underline;
+    cursor: not-allowed;
+}
+
+.book__ratings{
+    margin-bottom: 8px;
+    color:#fabf2a;
+}
+
+.book__price--normal{
+    text-decoration: line-through;
+    padding-right: 8px; 
+    color: #bfbfbf;
+}
+
+/*
+
+EXPLORE
+
+*/
+
+#explore{
+    background-color: rgb(165, 165, 231);;
+}
+
+.btn2{
+    padding: 16px 34px;
+    margin-top: 24px;
+    font-size: 28px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 500;
+    background-color: rgb(92, 41, 169);
+    color: white;
+}
+
+.button__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer{
+    background-color: rgb(37, 36, 36);
+}
+
+.footer__img{
+    width: 220px;
+    /*inverts the library logo from black to white using grayscale*/
+    filter: grayscale(1) invert(1);
+    margin-bottom: 20px;
+}
+
+.footer__img--wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 0 16px;
+}
+
+.footer__link{
+    font-size: 20px;
+    text-decoration: none;
+    color:white;
+}
+
+.footer__link:hover{
+    text-decoration: underline;
+}
+.footer__link--anchor:hover{
+cursor: not-allowed;
+}
+
+.footer__copyright{
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer__copyright--wrapper{
+    font-size: 20px;
+    text-decoration: none;
+    color:white;
+}
+
+/*
+ SMALL PHONES, TABLETS, LARGE SMARTPHONES
+*/
+
+@media (max-width: 768px){
+    .header__description{
+        padding: 0 24px;
+    } 
+
+    .book{
+        width: 50%;
+    }
+
+    button{
+        font-size: 18px;
+    }
+}
+/*
+SMALL PHONES, LARGE SMARTPHONES
+*/
+
+@media (max-width:550px){
+    .nav__links{
+        display: none;
+    }
+
+    .btn__menu{
+        /*show the menu button again*/
+        display: block;
+    }
+}
